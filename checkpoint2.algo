@@ -1,0 +1,24 @@
+ALGORITHM Algo_InsertionSort
+VAR
+    arr: ARRAY_OF INTEGER;
+    
+    i,j,el:INTEGER;      
+
+BEGIN
+
+    FOR i FROM 1 TO length[arr]-1  DO
+        el:=arr[i];     //fixer el à current el 
+        j:=i-1;          //compteur pour parcourir arr
+
+        WHILE ( j>0 && arr[j]>el) DO // tant que j>0 et arr[j]>current el on fait le swap
+            arr[j+1]:=arr[j];        //swap entre arr j et el=arr[j+1]
+            j:=j-1                   // decrement j pour parcourir le tableau vers la gauche
+        END_WHILE
+
+        arr[j+1]= el                
+
+    END_FOR
+
+write (arr)
+
+END
